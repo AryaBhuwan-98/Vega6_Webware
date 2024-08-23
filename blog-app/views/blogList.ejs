@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog List</title>
+</head>
+<body>
+    <h1>Your Blogs</h1>
+    <a href="/blogs/add">Add New Blog</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% blogs.forEach(blog => { %>
+                <tr>
+                    <td><%= blog.title %></td>
+                    <td><%= blog.description %></td>
+                    <td><img src="/<%= blog.image %>" alt="<%= blog.title %>" width="100"></td>
+                    <td>
+                        <a href="/blogs/edit/<%= blog._id %>">Edit</a>
+                        <form action="/blogs/delete/<%= blog._id %>" method="POST" style="display:inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+                        <a href="/blogs/view/<%= blog._id %>">View</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>

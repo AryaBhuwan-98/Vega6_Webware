@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog</title>
+</head>
+<body>
+    <h1>Add New Blog</h1>
+    <form action="/blogs/add" method="POST" enctype="multipart/form-data">
+        <label for="title">Blog Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <label for="description">Blog Description:</label>
+        <textarea id="description" name="description" required></textarea><br><br>
+        
+        <label for="image">Blog Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required><br><br>
+        
+        <button type="submit">Add Blog</button>
+    </form>
+    <a href="/blogs">Back to Blog List</a>
+</body>
+</html>
